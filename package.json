@@ -1,0 +1,24 @@
+{
+  "name": "mock-echo",
+  "version": "1.0.0",
+  "description": "Mock laravel Echo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/alexxiyang/mock-echo.git"
+  },
+  "keywords": [
+    "Laravel",
+    "Echo",
+    "Testing"
+  ],
+  "author": "Alex Yang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexxiyang/mock-echo/issues"
+  },
+  "homepage": "https://github.com/alexxiyang/mock-echo#readme"
+}
