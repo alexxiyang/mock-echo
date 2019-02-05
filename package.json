@@ -2,9 +2,11 @@
   "name": "mock-echo",
   "version": "0.0.1",
   "description": "Mock laravel Echo",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "dev": "tsc -w",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,14 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/alexxiyang/mock-echo/issues"
+  },
+  "dependencies": {
+    "lodash": "^4.17.10"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.93",
+    "@types/node": "^6.0.60",
+    "typescript": "^2.6.0"
   },
   "homepage": "https://github.com/alexxiyang/mock-echo#readme"
 }
