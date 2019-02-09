@@ -6,7 +6,7 @@
 
 Mocking framework claravel Echo
 
-# install
+# Installation
 
 `npm i mock-echo`
 
