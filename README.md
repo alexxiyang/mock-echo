@@ -22,6 +22,9 @@ Import mock-echo
 
 Replace global object `Echo` with `new MockEcho()` before every unit test
 ```javascript
+
+let mockEcho
+
 beforeEach(() => {
     mockEcho = new MockEcho()
     global.Echo = mockEcho
