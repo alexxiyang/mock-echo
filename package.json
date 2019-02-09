@@ -1,6 +1,6 @@
 {
   "name": "mock-echo",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Mock laravel Echo",
   "main": "dist/index.js",
   "scripts": {
