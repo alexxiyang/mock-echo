@@ -1,4 +1,9 @@
 # mock-echo
+[![npm package][npm-badge]][npm]
+
+[npm-badge]: https://img.shields.io/npm/v/mock-echo.svg?style=flat-square
+[npm]: https://www.npmjs.org/package/mock-echo
+
 Mocking framework claravel Echo
 
 # install
