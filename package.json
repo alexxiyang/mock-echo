@@ -1,7 +1,7 @@
 {
   "name": "mock-echo",
   "version": "1.0.0",
-  "description": "Mock laravel Echo",
+  "description": "Mocking framework for Laravel Echo",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
