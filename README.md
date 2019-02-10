@@ -49,9 +49,9 @@ You can use `channelExist`, `privateChannelExist` or `presenceChannelExist` to d
 
 Example:
 ```javascript
-    expect(mockEcho.channelExist('news')).toBe(true)
-    expect(mockEcho.privateChannelExist('meeting')).toBe(true)
-    expect(mockEcho.presenceChannelExist('chat')).toBe(true)
+expect(mockEcho.channelExist('news')).toBe(true)
+expect(mockEcho.privateChannelExist('meeting')).toBe(true)
+expect(mockEcho.presenceChannelExist('chat')).toBe(true)
 ```
 
 ## Get mock channel object
@@ -66,7 +66,7 @@ Mock channel object has functions `eventExist`, `broadcast`, etc.
 
 Example:
 ```javascript
-    expect(mockEcho.getChannel('news').eventExist('NewsMessage')).toBe(true)
+expect(mockEcho.getChannel('news').eventExist('NewsMessage')).toBe(true)
 ```
 
 ## Determine whether event has been listened
@@ -79,9 +79,9 @@ You can use `getChannel(channelName).eventExist`, `getPrivateChannel(channelName
 
 Example:
 ```javascript
-    expect(mockEcho.getChannel('news').eventExist('NewsMessage')).toBe(true)
-    expect(mockEcho.getPrivateChannel('meeting').eventExist('MeetingMessage')).toBe(true)
-    expect(mockEcho.getPresenceChannel('chat').eventExist('ChatMessage')).toBe(true)
+expect(mockEcho.getChannel('news').eventExist('NewsMessage')).toBe(true)
+expect(mockEcho.getPrivateChannel('meeting').eventExist('MeetingMessage')).toBe(true)
+expect(mockEcho.getPresenceChannel('chat').eventExist('ChatMessage')).toBe(true)
 ```
 
 ## Broadcast event
@@ -92,11 +92,11 @@ You can use `broadcast` to broadcast an event.
 
 Example:
 ```javascript
-    mockEcho.getChannel('news').broadcast('NewsMessage', { message: 'Hello World' })
-    wrapper.vm.$nextTick(() => {
-        expect(wrapper.find('.message').text()).toBe('It said Hello World')
-        done()
-    })
+mockEcho.getChannel('news').broadcast('NewsMessage', { message: 'Hello World' })
+wrapper.vm.$nextTick(() => {
+    expect(wrapper.find('.message').text()).toBe('It said Hello World')
+    done()
+})
 ```
 
 ## Presence channel actions
@@ -111,24 +111,24 @@ You can use `iJoin`, `userJoin`, `userLeave` to trigger presence channel actions
 
 Example:
 ```javascript
-    mockEcho.getPresenceChannel('chat').iJoin({id: 1, name: 'Alex'})
-    wrapper.vm.$nextTick(() => {
-        expect(wrapper.find('.here-message').text()).toBe('There are 1 users')
-        done()
-    })
+mockEcho.getPresenceChannel('chat').iJoin({id: 1, name: 'Alex'})
+wrapper.vm.$nextTick(() => {
+    expect(wrapper.find('.here-message').text()).toBe('There are 1 users')
+    done()
+})
 
-    // You will need paulSubId to get this user away from this channel
-    let paulSubId = mockEcho.getPresenceChannel('chat').userJoin({id: 2, name: 'Paul'})
-    wrapper.vm.$nextTick(() => {
-        expect(wrapper.find('.join-message').text()).toBe('Paul joined')
-        done()
-    })
+// You will need paulSubId to get this user away from this channel
+let paulSubId = mockEcho.getPresenceChannel('chat').userJoin({id: 2, name: 'Paul'})
+wrapper.vm.$nextTick(() => {
+    expect(wrapper.find('.join-message').text()).toBe('Paul joined')
+    done()
+})
 
-    mockEcho.getPresenceChannel('chat').userLeave(paulSubId)
-    wrapper.vm.$nextTick(() => {
-        expect(wrapper.find('.leave-message').text()).toBe('Paul leaved')
-        done()
-    })
+mockEcho.getPresenceChannel('chat').userLeave(paulSubId)
+wrapper.vm.$nextTick(() => {
+    expect(wrapper.find('.leave-message').text()).toBe('Paul leaved')
+    done()
+})
 ```
 
 ## Client events
@@ -139,19 +139,19 @@ You can use `userWhisper` to send user event. Only private channel object and pr
 
 Example:
 ```javascript
-    // private channel
-    mockEcho.getPrivateChannel('meeting').userWhisper('meetingClicking', { username: username })
-    wrapper.vm.$nextTick(() => {
-        expect(wrapper.find('.whisper-message').text()).toBe(`${username} is clicking the button`)
-        done()
-    })
+// private channel
+mockEcho.getPrivateChannel('meeting').userWhisper('meetingClicking', { username: username })
+wrapper.vm.$nextTick(() => {
+    expect(wrapper.find('.whisper-message').text()).toBe(`${username} is clicking the button`)
+    done()
+})
 
-    // presence channel
-    mockEcho.getPresenceChannel('chat').userWhisper('chatClicking', { username: username })
-    wrapper.vm.$nextTick(() => {
-        expect(wrapper.find('.whisper-message').text()).toBe(`${username} is clicking the button`)
-        done()
-    })
+// presence channel
+mockEcho.getPresenceChannel('chat').userWhisper('chatClicking', { username: username })
+wrapper.vm.$nextTick(() => {
+    expect(wrapper.find('.whisper-message').text()).toBe(`${username} is clicking the button`)
+    done()
+})
 ```
 
 # If you found any bugs
