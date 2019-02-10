@@ -17,8 +17,6 @@ Mocking framework for [Laravel](https://laravel.com/) [Echo](https://laravel.com
 
 # Usage
 
-> Use `expect` as assertion library
-
 Import mock-echo 
 `import MockEcho from 'mock-echo'`
 
@@ -53,6 +51,8 @@ expect(mockEcho.channelExist('news')).toBe(true)
 expect(mockEcho.privateChannelExist('meeting')).toBe(true)
 expect(mockEcho.presenceChannelExist('chat')).toBe(true)
 ```
+
+> All examples are using `expect` as assertion library
 
 ## Get mock channel object
 
