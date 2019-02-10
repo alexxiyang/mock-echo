@@ -1,4 +1,6 @@
-# mock-echo
+mock-echo
+=============
+
 [![Travis][build-badge]][build] [![npm package][npm-badge]][npm]
 
 [build-badge]: https://img.shields.io/travis/alexxiyang/mock-echo/master.svg?style=flat-square
@@ -7,7 +9,7 @@
 [npm-badge]: https://img.shields.io/npm/v/mock-echo.svg?style=flat-square
 [npm]: https://www.npmjs.org/package/mock-echo
 
-Mocking framework claravel Echo
+Mocking framework for [Laravel](https://laravel.com/) [Echo](https://laravel.com/docs/5.7/broadcasting#installing-laravel-echo)
 
 # Installation
 
@@ -22,7 +24,6 @@ Import mock-echo
 
 Replace global object `Echo` with `new MockEcho()` before every unit test
 ```javascript
-
 let mockEcho
 
 beforeEach(() => {
