@@ -56,6 +56,10 @@ class PrivateChannel extends Channel {
     notify (notifiable) {
         this.notificationFn(notifiable)
     }
+
+    whisper(eventName, event) {
+        this.userWhisper(eventName, event);
+    }
 }
 
 class PresenceChannel extends PrivateChannel {
