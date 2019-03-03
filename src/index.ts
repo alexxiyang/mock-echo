@@ -35,7 +35,7 @@ class PrivateChannel extends Channel {
         this.notificationFn = null
     }
 
-    userWhisper (eventName, event) {
+    whisper (eventName, event) {
         if (typeof this.clientEvents[`client-${eventName}`] === 'undefined') {
             console.error(`Channel didn't listen to client event: ${eventName}`)
             return

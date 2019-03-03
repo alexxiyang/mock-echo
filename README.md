@@ -133,21 +133,21 @@ wrapper.vm.$nextTick(() => {
 
 ## Client events
 
-You can use `userWhisper` to send user event. Only private channel object and presence channel object have `userWhisper`.
+You can use `whisper` to send user event. Only private channel object and presence channel object have `whisper`.
 
 > Note: If you are using `vue-test-utils`, call `$nextTick` before assertion.
 
 Example:
 ```javascript
 // private channel
-mockEcho.getPrivateChannel('meeting').userWhisper('meetingClicking', { username: username })
+mockEcho.getPrivateChannel('meeting').whisper('meetingClicking', { username: username })
 wrapper.vm.$nextTick(() => {
     expect(wrapper.find('.whisper-message').text()).toBe(`${username} is clicking the button`)
     done()
 })
 
 // presence channel
-mockEcho.getPresenceChannel('chat').userWhisper('chatClicking', { username: username })
+mockEcho.getPresenceChannel('chat').whisper('chatClicking', { username: username })
 wrapper.vm.$nextTick(() => {
     expect(wrapper.find('.whisper-message').text()).toBe(`${username} is clicking the button`)
     done()
